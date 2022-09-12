@@ -4,12 +4,8 @@
 
 Чтобы запустить бот через докер, нужно:
 - скачать [докер](https://docs.docker.com/desktop/install/mac-install/)
-- в терминале ввести: 
+- в терминале ввести: `$ docker build .`
 
-`    $ docker build .`
-
-- затем: 
-
-`    $ docker run -d -p 80:80 imageID`
+- затем: `$ docker run -d -p 80:80 imageID`
 
 imageID можно получить командой docker images

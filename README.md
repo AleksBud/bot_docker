@@ -8,4 +8,4 @@
 
 - затем: `$ docker run -d -p 80:80 imageID`
 
-imageID можно получить командой docker images
+imageID можно получить командой `docker images`

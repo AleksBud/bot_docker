@@ -9,7 +9,7 @@ def translater(text: str):
          'ж':'zh', 'Ж':'ZH',
          'з':'z', 'З':'Z',
          'и':'i', 'И':'I',
-         'й':'y', 'Й':'Y',
+         'й':'i', 'Й':'I',
          'к':'k', 'К':'K',
          'л':'l', 'Л':'L',
          'м':'m', 'М':'M',
@@ -26,19 +26,21 @@ def translater(text: str):
          'ч':'ch', 'Ч':'CH',
          'ш':'sh', 'Ш':'SH',
          'щ':'shch', 'Щ':'SHCH',
-         'ъ':'', 'Ъ':'',
+         'ъ':'ie', 'Ъ':'IE',
          'ы':'y', 'Ы':'Y',
          'ь':'', 'Ь':'',
          'э':'e', 'Э':'E',
-         'ю':'yu', 'Ю':'YU',
-         'я':'ya', 'Я':'YA'}
-
-    if text.capitalize() == text:
-        for key in d:
-            text = text.replace(key, d[key])
-            text = text.capitalize()
-    else:
-        for key in d:
-            text = text.replace(key, d[key])
+         'ю':'iu', 'Ю':'IU',
+         'я':'ia', 'Я':'IA'}
+    text = text.split()
+    for index, word in enumerate(text):
+        if word.capitalize() == word:
+            for key in d:
+                word = word.replace(key, d[key]).capitalize()
+                text[index] = word
+        else:
+            for key in d:
+                word = word.replace(key, d[key])
+                text[index] = word
+    text = ' '.join(text)
     return text
-
